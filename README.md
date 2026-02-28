@@ -1,67 +1,52 @@
-Simulador de Crédito Educativo
-Integrantes
+# Simulador de Crédito Educativo
 
-Juan Felipe Santiago
+## Integrantes
+- Juan Felipe Santiago  
+- Jhairo Esteban Muñeton  
 
-Jhairo Esteban Muñeton
+---
 
-Descripción del Proyecto
+## Descripción del Proyecto
 
 Este proyecto consiste en el desarrollo de un simulador de crédito educativo en Python.
-El sistema permite calcular el valor de la cuota mensual, el total pagado al finalizar el crédito y el total de intereses generados, a partir de un monto solicitado, una tasa de interés mensual y un plazo en meses.
 
-Además, el programa valida los datos ingresados y maneja errores mediante excepciones personalizadas, garantizando que los valores ingresados sean correctos antes de realizar los cálculos.
+El sistema permite calcular:
 
-También incluye pruebas unitarias para verificar que los resultados sean correctos en diferentes escenarios, tanto normales como extraordinarios y casos de error.
+- La cuota mensual.
+- El total pagado al finalizar el crédito.
+- El total de intereses generados.
 
-Datos de Entrada
+El programa valida los datos ingresados y maneja errores mediante excepciones personalizadas.  
+También incluye pruebas unitarias para verificar que los cálculos sean correctos.
 
-El programa recibe tres datos principales:
+---
 
-Valor de la compra: monto total del crédito solicitado.
+## Datos de Entrada
 
-Tasa de interés mensual: porcentaje mensual que se cobra por el crédito.
+El programa recibe:
 
-Plazo: número de meses en los que se pagará el crédito.
+- **Valor de la compra:** monto total del crédito.
+- **Tasa de interés mensual:** porcentaje mensual (ejemplo: 1.2%).
+- **Plazo:** número de meses en los que se pagará el crédito.
 
-Datos de Salida
+---
 
-Con base en los datos ingresados, el sistema calcula:
+## Datos de Salida
 
-Cuota mensual: valor que se debe pagar cada mes.
+El sistema genera:
 
-Total de abonos: suma total pagada al finalizar el crédito.
+- **Cuota mensual**
+- **Total de abonos**
+- **Total de intereses**
 
-Total de intereses: dinero adicional pagado por concepto de intereses.
+---
 
-Casos Evaluados
+## Validaciones
 
-Se probaron diferentes escenarios:
+El sistema genera errores cuando:
 
-Casos normales:
-
-Créditos con tasas entre 1% y 1.5%.
-
-Plazos entre 48 y 72 meses.
-
-Montos entre 15 y 35 millones de pesos.
-
-Casos extraordinarios:
-
-Tasas más bajas (0.8% y 0.9%).
-
-Plazos más largos (hasta 96 meses).
-
-Casos de error:
-
-Valor de crédito negativo.
-
-Tasa superior al máximo permitido.
-
-Plazo mayor al permitido.
-
-Plazo negativo o cero.
-
-Datos incompletos.
-
-En todos estos casos el sistema responde correctamente, ya sea calculando los valores esperados o generando el error correspondiente.
+- El valor del crédito es negativo.
+- La tasa supera el máximo permitido.
+- El plazo es mayor al permitido.
+- El plazo es negativo o cero.
+- Los datos están incompletos.
