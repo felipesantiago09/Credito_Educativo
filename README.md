@@ -200,6 +200,40 @@ Se usa cuando el valor del crédito es menor o igual a cero.
 ErrorPlazo
 Se usa cuando el plazo es inválido (menor o igual a cero, o mayor a 96 meses).
 
+Arquitectura del Proyecto
+
+El proyecto está organizado en módulos para separar la lógica del sistema, las pruebas y la documentación.
+
+Estructura
+Creditoeducativo/
+│
+├── src/
+│   ├── model/
+│   │   └── logica_Credito.py
+│   └── consola_Credito.py
+│
+├── tests/
+│   └── tests_Credito.py
+│
+├── docs/
+│   └── CreditoEducativo.xlsx
+│
+└── README.md
+Descripción
+
+src/
+Contiene el código principal del sistema.
+
+logica_Credito.py: lógica para calcular cuota, total pagado e intereses.
+
+consola_Credito.py: interfaz de ejecución por consola.
+
+tests/
+Contiene las pruebas unitarias que verifican el funcionamiento correcto del sistema usando unittest.
+
+docs/
+Archivos de apoyo y documentación del proyecto.
+
 ErrorUsura
 Se usa cuando la tasa supera el máximo permitido del 4% mensual.
 
