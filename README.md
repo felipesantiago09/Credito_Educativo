@@ -206,4 +206,67 @@ Se usa cuando la tasa supera el máximo permitido del 4% mensual.
 ErrorDatos
 Se usa cuando faltan datos o están vacíos.
 
+-----
+
+como Ejecutar el Proyecto
+Requisitos previos
+
+Antes de ejecutar el simulador, asegúrate de tener instalado:
+
+Python 3.x
+
+Para verificar si Python está instalado, usa este comando:
+
+python --version
+
+o en algunos sistemas:
+
+python3 --version
+Estructura del Proyecto
+
+
+El archivo principal que contiene la lógica del simulador es:
+
+logica_Credito.py
+
+Puedes ejecutarlo con:
+
+python logica_Credito.py
+
+o si tu sistema usa python3:
+
+python3 logica_Credito.py
+Importante:
+
+Actualmente, este archivo solo contiene funciones y validaciones, por lo tanto:
+
+no muestra un menú
+
+
+
+Ejecutar las pruebas unitarias
+
+Para ejecutar todas las pruebas del sistema, usa:
+
+python tests_Credito.py
+
+
+python3 tests_Credito.py
+
+También puedes ejecutar las pruebas usando el módulo unittest de Python:
+
+python -m unittest tests_Credito.py
+
+o:
+
+python3 -m unittest tests_Credito.py
+Si quieres ver más detalle en la salida:
+python -m unittest -v tests_Credito.py
+
+o:
+
+python3 -m unittest -v tests_Credito.py
+
+El parámetro -v significa verbose, y muestra el nombre de cada prueba ejecutada.
+
 
