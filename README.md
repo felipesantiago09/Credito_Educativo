@@ -4,7 +4,7 @@ Integrantes
 Juan Felipe Santiago
 
 Jhairo Esteban Muñeton
-
+----
 Descripción del Proyecto
 
 El Simulador de Crédito Educativo es un programa desarrollado en Python que permite calcular el comportamiento de un préstamo o crédito educativo a partir de tres datos principales:
@@ -22,6 +22,7 @@ Validación de datos de entrada
 Manejo de errores mediante excepciones personalizadas
 Pruebas unitarias para comprobar que los cálculos sean correctos
 
+---------
 Objetivo del Proyecto
 El objetivo de este proyecto es simular el funcionamiento de un crédito educativo usando matemáticas financieras, permitiendo al usuario conocer:
 
@@ -33,6 +34,7 @@ Esto ayuda a entender el costo real de financiar estudios mediante cuotas.
 
 Funcionalidades del Sistema
 
+--------
 El programa permite:
 
 Calcular la cuota fija mensual de un crédito educativo.
@@ -79,6 +81,8 @@ En decimal:
 3. Plazo (plazo)
 
 Es el número de meses en los que se pagará el crédito.
+
+---------
 
 Reglas:
 
