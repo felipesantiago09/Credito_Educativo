@@ -6,8 +6,8 @@ Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la g
 
 ##  Integrantes del equipo
 
-- **Jhairo Esteban Muñeton Cortes**
-- **Juacho Felipacho Santiagacho Panzon GAY**
+- **mi hijacho Estebananacho gusacho**
+- **Juan Felipe Santiago Pinzon**
 - **Jerónimo Roldán Cardona**
 - **Francisco Gómez**
 
