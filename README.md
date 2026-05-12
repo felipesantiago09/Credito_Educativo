@@ -6,8 +6,8 @@ Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la g
 
 ##  Integrantes del equipo
 
-- **mi hijacho Estebananacho gusacho**
-- **Juan Felipe Santiago Pinzon**
+- **Jhairo esteban Muñeton cortes**
+- **Juan Felipe Santiago Pinzon CARA DE PENE**
 - **Jerónimo Roldán Cardona**
 - **Francisco Gómez**
 
