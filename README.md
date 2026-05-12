@@ -6,8 +6,8 @@ Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la g
 
 ##  Integrantes del equipo
 
-- **Jhairo Esteban Muñeco Cortes**
-- **Juan Felipe Santiago Panzon**
+- **Jhairo Estebanano Muñeco Cortes**
+- **Juan Felipe Santiago Pinzon**
 - **Jerónimo Roldán Cardona**
 - **Francisco Gómez**
 
