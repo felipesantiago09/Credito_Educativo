@@ -6,8 +6,8 @@ Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la g
 
 ##  Integrantes del equipo
 
-- **Jhairo esteban Muñeton cortes**
-- **Juan Felipe Santiago Pinzon CARA DE PENE**
+- **hola soy esteban y me gusta a cherry**
+- **Juan Felipe Santiago Pinzon **
 - **Jerónimo Roldán Cardona**
 - **Francisco Gómez**
 
