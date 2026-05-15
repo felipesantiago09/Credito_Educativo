@@ -5,8 +5,8 @@ Sistema de gestión de crédito educativo desarrollado en Python utilizando arqu
 
 ##  Integrantes del equipo
 
-- **Jhairo esteban Muñeton cortes**
-- **Juan Felipe Santiago Pinzacho**
+- **Jhairo esteban Muñeton cortezacho**
+- **Juan Felipe Santiago Pinzon**
 
 
 
