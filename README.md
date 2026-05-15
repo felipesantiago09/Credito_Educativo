@@ -1,13 +1,17 @@
-# Crédito Educativo - GUI
+# Crédito Educativo
 
-Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la gestión y simulación de un crédito educativo. Permite calcular cuotas, intereses y llevar un control de los pagos realizados de manera visual e intuitiva.
-
+Sistema de gestión de crédito educativo desarrollado en Python utilizando arquitectura MVC, PostgreSQL, SQLAlchemy ORM y Kivy para la interfaz gráfica.
 ---
 
 ##  Integrantes del equipo
 
 - **Jhairo esteban Muñeton cortes**
-- **Juan Felipe Santiago Pinzon**
+- **Juan Felipe Santiago Pinzacho**
+
+
+
+
+
 - **Jerónimo Roldán Cardona**
 - **Francisco Gómez**
 
@@ -23,64 +27,183 @@ Este proyecto consiste en el desarrollo de una interfaz gráfica (GUI) para la g
 
 ---
 
-##  Tecnologías utilizadas
+# Tecnologías utilizadas
 
-- Python  
-- Kivy  
-- Arquitectura modular (separación entre lógica y vista)  
+* Python 3.12
+* PostgreSQL
+* Render
+* SQLAlchemy ORM
+* Kivy
+* python-dotenv
+* Git y GitHub
 
 ---
 
-## Estructura del proyecto
+## Estructura
 
-```
+```txt
 Credito_Educativo/
 │
 ├── src/
+│   ├── controller/
 │   ├── model/
-│   │   └── logica_Credito.py
-│   ├── view/
-│   │   └── gui/
-│   │       └── credito_gui.py
+│   └── view/
+│       └── gui/
 │
-├── main.py
-└── README.md
+├── tests/
+├── .env
+├── .gitignore
+├── requirements.txt
+├── README.md
+└── main.py
+```
+
+---
+# Funcionalidades implementadas
+
+## Base de datos
+
+* Conexión a PostgreSQL mediante Render.
+* Creación automática de tablas.
+* Uso de SQLAlchemy ORM.
+
+## CRUD completo
+
+### CREATE
+
+Inserción de estudiantes en la base de datos.
+
+### READ
+
+Consulta de estudiantes registrados.
+
+### UPDATE
+
+Actualización de información de estudiantes.
+
+### DELETE
+
+Eliminación de estudiantes.
+
+## Interfaz gráfica
+
+* Interfaz desarrollada con Kivy.
+* Integración con el sistema CRUD.
+* Gestión visual de estudiantes.
+
+## Seguridad
+
+* Uso de archivo `.env` para proteger credenciales.
+* Uso de `.gitignore` para evitar subir datos sensibles.
+
+---
+
+
+##  Instrucciones para ejecutar la GUI
+
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/felipesantiago09/Credito_Educativo.git
 ```
 
 ---
 
-##  Instrucciones para ejecutar la GUI
+## 2. Entrar a la carpeta del proyecto
 
-### 1. Clonar el repositorio
-
-```
-git clone <URL_DEL_REPOSITORIO>
-```
-
-### 2. Entrar a la carpeta
-
-```
+```bash
 cd Credito_Educativo
 ```
 
-### 3. Instalar dependencias
+---
 
-```
-pip install kivy
+## 3. Crear entorno virtual
+
+```bash
+py -3.12 -m venv .venv
 ```
 
-### 4. Ejecutar la aplicación
+---
 
+## 4. Activar entorno virtual
+
+### Windows PowerShell
+
+```bash
+.venv\Scripts\Activate.ps1
 ```
+
+---
+
+## 5. Instalar dependencias
+
+
+---
+# Ejecución del proyecto
+
+```bash
 python main.py
 ```
 
 ---
 
-##  Requisitos
+# Modelo implementado
 
-- Python 3.x  
-- Kivy correctamente instalado  
+## Estudiante
+
+Campos:
+
+* id
+* nombre
+* correo
+* carrera
+
+---
+
+# ORM utilizado
+
+El proyecto utiliza SQLAlchemy ORM para:
+
+* Crear tablas automáticamente.
+* Mapear clases Python a tablas PostgreSQL.
+* Gestionar consultas SQL mediante objetos.
+
+---
+
+# Base de datos
+
+La base de datos está desplegada en Render utilizando PostgreSQL.
+
+---
+
+# Pruebas
+
+El proyecto incluye pruebas para validar:
+
+* Inserción de datos.
+* Consulta de registros.
+* Actualización de información.
+* Eliminación de registros.
+
+---
+
+# Buenas prácticas implementadas
+
+* Arquitectura MVC.
+* Variables de entorno protegidas.
+* Uso de ORM.
+* Separación de responsabilidades.
+* Repositorio GitHub.
+* Control de versiones con Git.
+
+---
+
+# Requisitos
+
+* Python 3.12
+* PostgreSQL
+* Conexión a internet
 
 ---
 
@@ -88,3 +211,4 @@ python main.py
 
 - Mantener la estructura de carpetas para evitar errores en las importaciones.  
 - Si Kivy presenta problemas, revisar instalación o dependencias del sistema.
+- Si eliminas un estudiante tienes que cerrar y volver a abrir para que se actualice
