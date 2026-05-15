@@ -25,10 +25,9 @@ def consultar_estudiantes():
 
     estudiantes = db.query(Estudiante).all()
 
-    for e in estudiantes:
-        print(e.id, e.nombre, e.correo, e.carrera)
-
     db.close()
+
+    return estudiantes
 
 def actualizar_estudiante(id_estudiante, nuevo_nombre):
 
