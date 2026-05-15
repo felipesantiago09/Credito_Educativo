@@ -5,8 +5,8 @@ Sistema de gestión de crédito educativo desarrollado en Python utilizando arqu
 -- Ana cherry
 ##  Integrantes del equipo
 
-- **Ana cherry fan**
-- **Juan Felipe Santiago Pinzon**
+- **Jhairo Esteban Muñeton Cortes**
+- **Juan Felipe Santiago Pinzacho**
 
 
 
