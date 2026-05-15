@@ -1,7 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from dotenv import load_dotenv
+import os
 
-DATABASE_URL = "postgresql://adminesteban_y_felipe:20uOvMkWmwxQyKgUwckPmGmvggeEkH1f@dpg-d81jsecvikkc73a5rgjg-a.oregon-postgres.render.com:5432/credito_db"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
