@@ -1,0 +1,5 @@
+PG_USER     = "adminesteban_y_felipe"
+PG_PASSWORD = "20uOvMkWmwxQyKgUwckPmGmvggeEkH1f"
+PG_HOST     = "dpg-d81jsecvikkc73a5rgjg-a.oregon-postgres.render.com"
+PG_PORT     = "5432"
+PG_DATABASE = "credito_db"

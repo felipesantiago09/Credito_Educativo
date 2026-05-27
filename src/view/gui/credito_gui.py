@@ -1,7 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
@@ -290,7 +286,7 @@ class PantallaCredito(Screen):
 
     def calcular_cuota(self, *_):
         
-        from model import logica_Credito
+        from src.model import logica_Credito
 
         self.tarjeta_resultado.opacity = 0
         self.etiqueta_valor_resultado.color = VERDE
