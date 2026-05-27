@@ -2,7 +2,6 @@
 
 Sistema de gestión de crédito educativo desarrollado en Python utilizando arquitectura MVC, PostgreSQL, SQLAlchemy ORM y Kivy para la interfaz gráfica.
 ---
--- Ana cherry
 ##  Integrantes del equipo
 
 - **Jhairo Esteban Muñeton Cortes**
