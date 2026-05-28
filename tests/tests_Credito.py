@@ -1,15 +1,12 @@
+# Todas las prueba sunitarias importan la biblioteca unittest
 import unittest
-from src.model.logica_Credito import (
-    calcular_cuota,
-    calcular_total_abonos,
-    calcular_total_intereses,
-    ErrorValorCompra,
-    ErrorPlazo,
-    ErrorDatos,
-    ErrorUsura,
-)
+import sys 
+sys.path.append( 'src')
+# Las pruebas importan los modulos que hacen el trabajo
+from model import logica_Credito
 
-
+# Debe existir por lo menos una clase que contenga las pruyebas unitarias
+# descediente de unittest.TestCase
 class CreditCardTest(unittest.TestCase):
 
     # Cada prueba unitaria es un metodo la clase
