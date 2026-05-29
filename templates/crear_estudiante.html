@@ -1,75 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Educativo</title>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
 
-    <h1>Credito Educativo</h1>
+    <div class="container">
 
-    <p><a href="/calcular_credito">Ir a calcular credito</a></p>
+        <h1>Crédito Educativo</h1>
 
-    {% if mensaje %}
-    <p>{{ mensaje }}</p>
-    {% endif %}
+        <p>
+            <a href="/calcular_credito">Ir a calcular crédito</a>
+        </p>
 
-    <form action="/buscar_estudiante">
-        <h2>Buscar un Estudiante</h2>
-        Escriba el ID del estudiante:
-        <input type="number" name="id_buscado" />
-        <button>Buscar</button>
-    </form>
+        {% if mensaje %}
+        <p>{{ mensaje }}</p>
+        {% endif %}
 
-    <form action="/guardar_estudiante">
-        <h2>Insertar un Estudiante</h2>
-        <table>
-            <tr>
-                <td>Nombre</td>
-                <td><input type="text" name="nombre" /></td>
-            </tr>
-            <tr>
-                <td>Correo</td>
-                <td><input type="text" name="correo" /></td>
-            </tr>
-            <tr>
-                <td>Carrera</td>
-                <td><input type="text" name="carrera" /></td>
-            </tr>
-        </table>
-        <input type="submit" />
-    </form>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <p>
-        Si es la primera vez que ejecuta esta aplicacion, necesitara crear las tablas en la base de datos
-        haciendo <a href="/crear_tablas">click aqui</a>
-    </p>
+        <form action="/buscar_estudiante">
+
+            <h2>Buscar un Estudiante</h2>
+
+            <label>ID del estudiante</label>
+            <input type="number" name="id_buscado" />
+
+            <input type="submit" value="Buscar">
+
+        </form>
+
+        <form action="/guardar_estudiante">
+
+            <h2>Insertar un Estudiante</h2>
+
+            <label>Nombre</label>
+            <input type="text" name="nombre" />
+
+            <label>Correo</label>
+            <input type="text" name="correo" />
+
+            <label>Carrera</label>
+            <input type="text" name="carrera" />
+
+            <input type="submit" value="Guardar">
+
+        </form>
+
+        <p class="tablas">
+            Si es la primera vez que ejecuta esta aplicación,
+            necesitará crear las tablas en la base de datos haciendo
+            <a href="/crear_tablas">click aquí</a>
+        </p>
+
+    </div>
 
 </body>
 

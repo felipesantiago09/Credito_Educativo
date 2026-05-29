@@ -1,62 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Educativo</title>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
 
-    <h1>Calcular Credito Educativo</h1>
+    <div class="container">
 
-    <form action="/calcular_credito">
-        <table>
-            <tr>
-                <td>Valor del credito</td>
-                <td>
-                    <input type="text" name="monto" value="{{ monto or '' }}" />
-                </td>
-            </tr>
-            <tr>
-                <td>Tasa de interes mensual (maximo 4%)</td>
-                <td>
-                    <input type="text" name="tasa" value="{{ tasa or '' }}" />
-                </td>
-            </tr>
-            <tr>
-                <td>Numero de cuotas (1 - 96)</td>
-                <td>
-                    <input type="text" name="plazo" value="{{ plazo or '' }}" />
-                </td>
-            </tr>
-        </table>
+        <h1>Crédito Educativo</h1>
 
-        <input type="submit" value="Calcular" />
-    </form>
+        <form action="/calcular_credito">
 
-    {% if error %}
-    <p>Error: {{ error }}</p>
-    {% endif %}
+            <label>Valor del crédito</label>
+            <input type="text" name="monto" value="{{ monto or '' }}">
 
-    {% if cuota %}
-    <h2>Resultado</h2>
-    <table>
-        <tr>
-            <td>Cuota mensual</td>
-            <td>$ {{ cuota }}</td>
-        </tr>
-        <tr>
-            <td>Total a pagar</td>
-            <td>$ {{ total_abonos }}</td>
-        </tr>
-        <tr>
-            <td>Total intereses</td>
-            <td>$ {{ total_intereses }}</td>
-        </tr>
-    </table>
-    {% endif %}
+            <label>Tasa de interés mensual</label>
+            <input type="text" name="tasa" value="{{ tasa or '' }}">
 
-    <a href="/">Volver al inicio</a>
+            <label>Número de cuotas</label>
+            <input type="text" name="plazo" value="{{ plazo or '' }}">
+
+            <input type="submit" value="Calcular">
+
+        </form>
+
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+
+        {% if cuota %}
+        <h2>Cuota mensual:</h2>
+        <p>{{ cuota }}</p>
+        {% endif %}
+
+    </div>
 
 </body>
 
