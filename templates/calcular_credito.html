@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1>Calcular Credito Educativo</h1>
+
+    <form action="/calcular_credito">
+        <table>
+            <tr>
+                <td>Valor del credito</td>
+                <td>
+                    <input type="text" name="monto" value="{{ monto or '' }}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Tasa de interes mensual (maximo 4%)</td>
+                <td>
+                    <input type="text" name="tasa" value="{{ tasa or '' }}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Numero de cuotas (1 - 96)</td>
+                <td>
+                    <input type="text" name="plazo" value="{{ plazo or '' }}" />
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Calcular" />
+    </form>
+
+    {% if error %}
+    <p>Error: {{ error }}</p>
+    {% endif %}
+
+    {% if cuota %}
+    <h2>Resultado</h2>
+    <table>
+        <tr>
+            <td>Cuota mensual</td>
+            <td>$ {{ cuota }}</td>
+        </tr>
+        <tr>
+            <td>Total a pagar</td>
+            <td>$ {{ total_abonos }}</td>
+        </tr>
+        <tr>
+            <td>Total intereses</td>
+            <td>$ {{ total_intereses }}</td>
+        </tr>
+    </table>
+    {% endif %}
+
+    <a href="/">Volver al inicio</a>
+
+</body>
+
+</html>

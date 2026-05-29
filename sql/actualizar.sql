@@ -1,3 +1,3 @@
 update estudiantes
-set nombre = '{nombre}', correo = '{correo}', carrera = '{carrera}'
+set nombre = '{nombre}'
 where id = {id};

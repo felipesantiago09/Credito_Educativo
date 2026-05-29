@@ -7,32 +7,34 @@
 
 <body>
 
+    {% if estudiante %}
+
+    <h2>Estudiante encontrado</h2>
+
     <table>
         <tr>
             <td>ID</td>
-            <td>
-{{ estudiante.id }}
-            </td>
+            <td>{{ estudiante.id }}</td>
         </tr>
         <tr>
             <td>Nombre</td>
-            <td>
-{{ estudiante.nombre }}
-            </td>
+            <td>{{ estudiante.nombre }}</td>
         </tr>
         <tr>
             <td>Correo</td>
-            <td>
-{{ estudiante.correo }}
-            </td>
+            <td>{{ estudiante.correo }}</td>
         </tr>
         <tr>
             <td>Carrera</td>
-            <td>
-{{ estudiante.carrera }}
-            </td>
+            <td>{{ estudiante.carrera }}</td>
         </tr>
     </table>
+
+    {% else %}
+
+    <p>No se encontro ningun estudiante con ese ID.</p>
+
+    {% endif %}
 
     <a href="/">Volver al inicio</a>
 

@@ -64,15 +64,12 @@ class EstudiantesController:
         conn.close()
         return [ Estudiante( id=f[0], nombre=f[1], correo=f[2], carrera=f[3] ) for f in lista ]
 
-    def actualizar( id_estudiante, nombre, correo, carrera ):
-        """ Actualiza todos los campos de un estudiante dado su id """
+    def actualizar( id_estudiante, nombre,):
         conn = get_connection()
         with open( "sql/actualizar.sql", "r" ) as archivo:
             consulta = archivo.read()
         consulta = consulta.format(
             nombre  = nombre,
-            correo  = correo,
-            carrera = carrera,
             id      = id_estudiante
         )
         with conn.cursor() as cur:
@@ -107,8 +104,8 @@ def consultar_estudiantes():
 def buscar_estudiante_por_id(id_estudiante):
     return EstudiantesController.buscar_estudiante( id_estudiante )
 
-def actualizar_estudiante(id_estudiante, nombre, correo, carrera):
-    EstudiantesController.actualizar( id_estudiante, nombre, correo, carrera )
-
+def actualizar_estudiante( id_estudiante, nombre ):
+    EstudiantesController.actualizar( id_estudiante, nombre )
+    
 def eliminar_estudiante(id_estudiante):
     EstudiantesController.eliminar( id_estudiante )
