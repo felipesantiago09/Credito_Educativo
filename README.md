@@ -1,113 +1,200 @@
-# Crédito Educativo
+# Crédito Educativo Web
 
-Sistema de gestión de crédito educativo desarrollado en Pytho, PostgreSQL, Kivy para la interfaz gráfica.
----
-##  Integrantes del equipo
-
-- **Jhairo Esteban Muñeton Cortes**
-- **Juan Felipe Santiago Pinzacho**
-
-
-
-
-
-- **Jerónimo Roldán Cardona**
-- **Francisco Gómez**
+Aplicación web desarrollada en Python utilizando Flask y PostgreSQL para la gestión de créditos educativos. El sistema permite calcular créditos, registrar estudiantes, realizar búsquedas y administrar información desde una interfaz web.
 
 ---
 
-##  Características
+# Integrantes del equipo
 
-- Cálculo de cuota mensual  
-- Cálculo del total de intereses  
-- Registro de abonos realizados  
-- Visualización de resultados en una interfaz gráfica amigable  
-- Implementación basada en Kivy  
-
----
-
-# Tecnologías utilizadas
-
-* Python 3.12
-* PostgreSQL
-* Render
-* Kivy
-* Git y GitHub
+- Juan Felipe Santiago Pinzon
+- Jhairo Esteban Muñetón Cortes
+- Jerónimo Roldán Cardona
+- Francisco Gómez
 
 ---
 
+# Descripción del Proyecto
 
-## Estructura del proyecto
+El proyecto consiste en una aplicación web basada en el patrón MVC (Modelo - Vista - Controlador) que permite:
 
+- Calcular créditos educativos.
+- Registrar estudiantes.
+- Buscar estudiantes registrados.
+- Gestionar información almacenada en PostgreSQL.
+- Ejecutar la aplicación desde un navegador web.
 
-CreditoEducativo/
-├── main.py                           # Punto de entrada: crea tablas y arranca la UI
-├── secret_config_sample.py           # Plantilla de configuración 
+La aplicación fue construida usando Flask con Blueprints para organizar las rutas y mantener una estructura limpia y escalable.
+
+---
+
+# Tecnologías Utilizadas
+
+- Python 3.10+
+- Flask
+- PostgreSQL
+- HTML5
+- CSS
+- Pytest
+- Git y GitHub
+
+---
+
+# Arquitectura MVC
+
+El proyecto está organizado siguiendo el patrón MVC:
+
+## Model
+
+Contiene toda la lógica de acceso a datos y conexión con PostgreSQL.
+
+Ubicación:
+
+```text
+src/model/
+```
+
+Archivos principales:
+
+- `connection.py` → conexión a la base de datos.
+- `estudiante_model.py` → operaciones CRUD.
+- `logica_Credito.py` → lógica de negocio para cálculos.
+- `init_db.py` → creación de tablas.
+
+---
+
+## View
+
+Contiene las vistas web y templates HTML.
+
+Ubicación:
+
+```text
+src/view/
+templates/
+```
+
+Archivos principales:
+
+- `vista_credito.py` → Blueprint de Flask.
+- `index.html`
+- `crear_estudiante.html`
+- `estudiante_buscado.html`
+- `calcular_credito.html`
+
+---
+
+## Controller
+
+Contiene la lógica que conecta la vista con el modelo.
+
+Ubicación:
+
+```text
+src/controller/
+```
+
+Archivo principal:
+
+- `estudiante_controller.py`
+
+---
+
+# Estructura del Proyecto
+
+```text
+Credito_Educativo/
+│
+├── app.py
+├── main.py
 ├── requirements.txt
+├── README.md
 ├── pytest.ini
-├── .gitignore
+├── secret_config.py
+│
 ├── src/
-│   ├── model/
-│   │   ├── connection.py             # Función get_connection() → psycopg2
-│   │   ├── estudiante_model.py       # Clase Estudiante 
-│   │   └── logica_Credito.py         # Lógica de negocio: cuotas, intereses
 │   ├── controller/
-│   │   └── estudiante_controller.py  
-│   └── view/
-│       └── gui/
-│           └── credito_gui.py        # Interfaz gráfica Kivy (3 pantallas)
+│   │   └── estudiante_controller.py
+│   │
+│   ├── model/
+│   │   ├── connection.py
+│   │   ├── estudiante_model.py
+│   │   ├── init_db.py
+│   │   └── logica_Credito.py
+│   │
+│   ├── view/
+│   │   └── web/
+│   │       └── vista_credito.py
+│   │
+│   └── gui/
+│       ├── credito_gui.py
+│       └── estudiantes_gui.py
+│
+├── templates/
+│   ├── index.html
+│   ├── crear_estudiante.html
+│   ├── estudiante_buscado.html
+│   └── calcular_credito.html
+│
+├── sql/
+│   ├── CrearTabla.sql
+│   ├── insertar.sql
+│   ├── buscar.sql
+│   ├── actualizar.sql
+│   └── eliminarBorrar.sql
+│
 └── tests/
-    ├── conftest.py                   # Fixture de conexión a BD de test (_test)
-    ├── test_crud_estudiantes.py      # Tests CRUD con pytest + psycopg2
-    └── tests_Credito.py              # Tests de lógica de crédito (unittest)
-
-
----
-
----
-# Funcionalidades implementadas
-
-## Base de datos
-
-* Conexión a PostgreSQL mediante Render.
-* Creación automática de tablas.
-
-## CRUD completo
-
-### CREATE
-
-Inserción de estudiantes en la base de datos.
-
-### READ
-
-Consulta de estudiantes registrados.
-
-### UPDATE
-
-Actualización de información de estudiantes.
-
-### DELETE
-
-Eliminación de estudiantes.
-
-## Interfaz gráfica
-
-* Interfaz desarrollada con Kivy.
-* Integración con el sistema CRUD.
-* Gestión visual de estudiantes.
-
-## Seguridad
-
-* Uso de archivo `.env` para proteger credenciales.
-* Uso de `.gitignore` para evitar subir datos sensibles.
+    ├── conftest.py
+    ├── test_crud_estudiantes.py
+    └── tests_Credito.py
+```
 
 ---
 
+# Funcionalidades Implementadas
 
-##  Instrucciones para ejecutar la GUI
+## Funcionalidad Web Principal
 
+La aplicación permite acceder desde el navegador a todas las funcionalidades principales del sistema.
 
-## 1. Clonar el repositorio
+---
+
+## Funcionalidad Web para Buscar
+
+El usuario puede buscar estudiantes registrados en la base de datos.
+
+---
+
+## Funcionalidad Web para Insertar
+
+El sistema permite registrar nuevos estudiantes desde formularios web.
+
+---
+
+## Menú de Inicio
+
+La aplicación cuenta con una página principal (`index.html`) desde donde el usuario puede acceder a:
+
+- Crear estudiante.
+- Buscar estudiante.
+- Calcular crédito.
+
+---
+
+## Opción para Crear Tablas de la Base de Datos
+
+El sistema crea automáticamente las tablas necesarias al ejecutar la aplicación.
+
+También se incluyen scripts SQL dentro de la carpeta:
+
+```text
+sql/
+```
+
+---
+
+# Configuración e Instalación
+
+## 1. Clonar el Repositorio
 
 ```bash
 git clone https://github.com/felipesantiago09/Credito_Educativo.git
@@ -115,7 +202,7 @@ git clone https://github.com/felipesantiago09/Credito_Educativo.git
 
 ---
 
-## 2. Entrar a la carpeta del proyecto
+## 2. Entrar al Proyecto
 
 ```bash
 cd Credito_Educativo
@@ -123,125 +210,195 @@ cd Credito_Educativo
 
 ---
 
+## 3. Crear Entorno Virtual (Opcional pero recomendado)
 
-## 1. Requisitos previos
+### Windows
 
-- Python 3.10 o superior
-- PostgreSQL instalado y corriendo (local o en la nube: Render, Railway, etc.)
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ---
 
-## 2. Instalar dependencias
+## 4. Instalar Dependencias
 
-bash
+```bash
 pip install -r requirements.txt
-
-
----
-
-## 3. Configurar la base de datos
-
-1. Copia el archivo de muestra:
-   bash
-   cp secret_config_sample.py secret_config.py
-   
-2. Abre secret_config.py y rellena tus datos:
-   python
-   PG_USER     = "tu_usuario"
-   PG_PASSWORD = "tu_contraseña"
-   PG_HOST     = "localhost"
-   PG_PORT     = "5432"
-   PG_DATABASE = "credito_db"
-   
-   en este caso los datos ya estan rellenados
-3. Crea la base de datos en PostgreSQL:
-   sql
-   CREATE DATABASE credito_db;
-   
-
-> secret_config.py está en .gitignore y *nunca* debe subirse al repositorio.
-Aun no lo pondremos en el git ignore pero proximamente estara 
+```
 
 ---
 
-## 4. Ejecutar la interfaz gráfica
+# Configuración de la Base de Datos
 
-bash
-python main.py
+## 1. Crear Base de Datos en PostgreSQL
 
-
-Esto:
-- Crea automáticamente la tabla estudiantes en PostgreSQL si no existe.
-- Abre la ventana con tres pantallas:
-  - *Crédito* — calcula cuota mensual, total a pagar e intereses.
-  - *Estudiantes* — inserta y lista estudiantes.
-  - *Gestión* — elimina y actualiza estudiantes por ID.
+```sql
+CREATE DATABASE credito_db;
+```
 
 ---
 
-## 5. Ejecutar los tests
+## 2. Configurar Credenciales
 
-Los tests usan una base de datos separada llamada credito_db_test (se crea automáticamente). Necesitas tener PostgreSQL activo y secret_config.py configurado.
+Editar el archivo:
 
-bash
+```text
+secret_config.py
+```
+
+Con los datos de PostgreSQL:
+
+```python
+PG_USER = "postgres"
+PG_PASSWORD = "tu_password"
+PG_HOST = "localhost"
+PG_PORT = "5432"
+PG_DATABASE = "credito_db"
+```
+
+---
+
+# Ejecutar la Aplicación Web
+
+## Iniciar Flask
+
+```bash
+python app.py
+```
+
+---
+
+## Abrir en el Navegador
+
+Ingresar a:
+
+```text
+http://127.0.0.1:5000/
+```
+
+---
+
+# Base de Datos en Blanco
+
+La aplicación puede ejecutarse con una base de datos vacía.
+
+Al iniciar:
+
+- Se establece automáticamente la conexión.
+- Se crean las tablas necesarias si no existen.
+- El sistema queda listo para insertar registros.
+
+---
+
+# Pruebas Unitarias
+
+El proyecto incluye pruebas automáticas para validar:
+
+- Inserción de estudiantes.
+- Consulta de registros.
+- Actualización de información.
+- Eliminación de estudiantes.
+- Lógica de cálculo de créditos.
+
+## Ejecutar Tests
+
+```bash
 pytest
+```
 
+## Ejecutar Tests con Detalle
 
-Para ver detalle:
-
-bash
+```bash
 pytest -v
-
-
----
-
-## 6. Reglas de negocio del crédito
-
-| Parámetro              | Restricción                        |
-|------------------------|------------------------------------|
-| Valor del crédito      | Mayor que 0                        |
-| Tasa de interés mensual | Entre 0 % y 4 % (máximo de usura) |
-| Número de cuotas       | Entre 1 y 96                       |
+```
 
 ---
 
-## Errores comunes
+# Requisitos de Evaluación Cubiertos
 
-| Error | Causa | Solución |
-|-------|-------|----------|
-| No se encontró secret_config.py | Falta el archivo de credenciales | Copia secret_config_sample.py → secret_config.py y rellénalo |
-| could not connect to server | PostgreSQL no está corriendo | Inicia el servicio de PostgreSQL |
-| ModuleNotFoundError: No module named 'src' | Corres pytest fuera de la raíz | Ejecuta pytest desde la carpeta raíz del proyecto |
+## Funcionalidad Web Principal
 
-El proyecto incluye pruebas para validar:
+✔ Aplicación accesible desde navegador.
 
-* Inserción de datos.
-* Consulta de registros.
-* Actualización de información.
-* Eliminación de registros.
+## Funcionalidad Web para Buscar
+
+✔ Implementada mediante formularios y consultas.
+
+## Funcionalidad Web para Insertar
+
+✔ Implementada mediante formularios web.
+
+## Menú de Inicio
+
+✔ Página principal con acceso a funcionalidades.
+
+## Crear Tablas de la BD
+
+✔ Tablas creadas automáticamente y scripts SQL incluidos.
+
+## README con instrucciones completas
+
+✔ Incluye instalación, configuración y ejecución local.
+
+## Base de Datos en Blanco
+
+✔ Compatible con base vacía.
+
+## Pruebas Unitarias
+
+✔ Tests funcionando con Pytest.
+
+## Arquitectura MVC con Blueprints
+
+✔ Implementada usando Flask Blueprints.
 
 ---
 
-# Buenas prácticas implementadas
+# Comandos Importantes
 
-* Arquitectura MVC.
-* Variables de entorno protegidas.
-* Separación de responsabilidades.
-* Repositorio GitHub.
-* Control de versiones con Git.
+## Ejecutar aplicación
+
+```bash
+python app.py
+```
+
+## Ejecutar pruebas
+
+```bash
+pytest
+```
+
+## Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-# Requisitos
+# Posibles Errores y Soluciones
 
-* Python 3.12
-* PostgreSQL
-* Conexión a internet
+| Error | Posible causa | Solución |
+|---|---|---|
+| `ModuleNotFoundError` | Dependencias faltantes | Ejecutar `pip install -r requirements.txt` |
+| Error de conexión PostgreSQL | PostgreSQL apagado | Iniciar servicio PostgreSQL |
+| Credenciales incorrectas | Datos mal configurados | Revisar `secret_config.py` |
+| Página no carga | Flask no iniciado | Ejecutar `python app.py` |
 
 ---
 
-##  Notas adicionales
+# Repositorio
 
-- Mantener la estructura de carpetas para evitar errores en las importaciones.  
-- Si Kivy presenta problemas, revisar instalación o dependencias del sistema.
-- Si eliminas un estudiante tienes que cerrar y volver a abrir para que se actualice
+Repositorio oficial del proyecto:
+
+```text
+https://github.com/felipesantiago09/Credito_Educativo
+```
