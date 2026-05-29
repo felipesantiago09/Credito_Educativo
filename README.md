@@ -6,7 +6,7 @@ Aplicación web desarrollada en Python utilizando Flask y PostgreSQL para la ges
 
 # Integrantes del equipo
 
-- Juan Felipe Santiago Pinzacho
+- Juan Felipe Santiago Pinzon
 - Jhairo Esteban Muñetón Cortes
 - Jerónimo Roldán Cardona
 - Francisco Gómez
