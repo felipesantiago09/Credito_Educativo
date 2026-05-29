@@ -21,8 +21,8 @@ def guardar_estudiante():
     estudiante.nombre  = request.args["nombre"]
     estudiante.correo  = request.args["correo"]
     estudiante.carrera = request.args["carrera"]
-    EstudiantesController.insertar( estudiante )
-    return render_template("crear_estudiante.html", mensaje="Estudiante insertado exitosamente")
+    id_generado = EstudiantesController.insertar( estudiante )
+    return render_template("crear_estudiante.html", mensaje=f"Estudiante insertado exitosamente con ID: {id_generado}")
 
 @blueprint.route('/crear_tablas')
 def crear_tablas():

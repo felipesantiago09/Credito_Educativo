@@ -38,8 +38,10 @@ class EstudiantesController:
         )
         with conn.cursor() as cur:
             cur.execute( consulta )
+            id_generado = cur.fetchone()[0]
         conn.commit()
         conn.close()
+        return id_generado
 
     def buscar_estudiante( id_estudiante ) -> Estudiante:
         """ Trae un estudiante dado su id """
